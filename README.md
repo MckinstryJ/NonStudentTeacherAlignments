@@ -45,7 +45,7 @@ This file is a CSV file that contains:
 |-----------------|--------------------|
 | bob_audio_0_001 | I went to the park |
 
-For the sake of simplicity later, each file should be of type 'wav' and if possible make it a tab sepearted file. 
+For the sake of simplicity later, each audio file should be of type 'wav' and, if possible, make the metadata file a tab delim file. 
 
 Note:
 <ul>
