@@ -34,7 +34,7 @@ In order to get these TextGrid files, you can use the Praat software to generate
 
 This could be seen as the 'teacher' in the attention based models, however, MFA is breaking that off as a sepearate research area and if newer models are using this as the 'teacher' then we could expect faster improvement for this forced aligner vs isolated development in those other teacher models (personal opinion).
 
-What this repo outlines is how to get MFA working for new audio data within the Windows 10 environment. I doubt there are large differences between operating systems but its worth noting. So, lets say you are wanting to utilize FastSpeech2 using [ming024's implementation](https://github.com/ming024/FastSpeech2). To do so you would need TextGrid files but all you have is your audio files of some person talking.
+What this repo outlines is how to get MFA working for new audio data within the Windows 10 environment. I doubt there are large differences between operating systems but its worth noting. So, lets say you are wanting to utilize FastSpeech2 using [ming024's implementation](https://github.com/ming024/FastSpeech2). To do so, you would need TextGrid files but lets say all you have is a collection of audio files of some person talking.
 
 ## Step 1: Create Metadata file
 The first step towards these TextGrid files is to create a metadata file. 
