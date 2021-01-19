@@ -56,5 +56,16 @@ Note:
 
 Sadly, this is a manual process but if you want to make this automatic you will have to trust current Speech-to-text (STT) models to transcribe the audio. As a side note, the Deaf and Hard of Hearing community depend on these (STT) models to provide accurate closed captioning for movies, video, and in general audio files. For more info, check out this article on the [2019 guide for automatic speech recgonition](https://heartbeat.fritz.ai/a-2019-guide-for-automatic-speech-recognition-f1e1129a141c).
 
-## Step 2: Resample You Audio via SoX
-From what I could gather, SoX is the go-to for adjusting the audio so that MFA can process the audio correctly. It would appear that the best sampling rate is 16kHz and it should only contain 1 channel. To make this easy, I included the code for this step within this repo. You will just need to figure out how to install it so the code works.
+## Step 2: Resample Your Audio via SoX
+From what I could gather, SoX is the go-to for adjusting the audio so that MFA can process the audio correctly. Take this with a grain of salt but I tried pysox and other approaches but they all didn't work for me. 
+
+It would appear that the best sampling rate is 16kHz and it should only contain 1 channel. To make this easy, I included the required code for this step within this repo. You will just need to figure out how to [install sox](http://sox.sourceforge.net/) so the code works.
+
+## Step 3: Generate LAB files via Prosodylab Aligner Tools
+Within MFA, you will notice that it will look for these lab files before creating the alignments. If you don't have them, it won't budge. What's funny, however, is the fact that these lab files are individual files that have the "audio file name" as the lab file name and the "words spoken in text" as the text in all caps within the file. A true head scratcher in terms of why is this a show stopper... but to get these lab files va Prosodylab Aligner Tools you will need to:
+
+```
+git clone https://github.com/prosodylab/prosodylab.alignertools
+```
+
+Then modify their code to be up-to-date. I've uploaded the modified relabel_clean.py file to save you some time but the modifications might effect your setup so first try to run their original code first but if you get a bunch of TextGrid files with the same "words spoken in text" then use mine.
