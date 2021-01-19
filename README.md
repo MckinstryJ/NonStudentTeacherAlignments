@@ -78,7 +78,7 @@ You will most likely find it easy to interact with this file since they provide 
 	<li>just hit enter</li>
 	<li>"abs location to your wav audio directory"</li>
 	<li>just hit enter (default is wav)</li>
-	<li>just hit enter></li>
+	<li>just hit enter</li>
 	<li>y</li>
 </ol>
 
