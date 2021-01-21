@@ -30,9 +30,7 @@ item []:
 ...
 ```
 
-In order to get these TextGrid files, you can use the Praat software to generate them manually or you can take a more automated approach via [Montreal Forced Aligner (MFA)](https://montreal-forced-aligner.readthedocs.io/en/latest/index.html). How MFA generates these files automatically is by using Machine Learning to find the appropriate segments within your audio files. 
-
-This could be seen as the 'teacher' in the attention based models, however, MFA is breaking that off as a sepearate research area and if newer models are using this as the 'teacher' then we could expect faster improvement for this forced aligner vs isolated development in those other teacher models (personal opinion).
+In order to get these TextGrid files, you can use the Praat software to generate them manually or you can take a more automated approach via [Montreal Forced Aligner (MFA)](https://montreal-forced-aligner.readthedocs.io/en/latest/index.html).
 
 What this repo outlines is how to get MFA working for new audio data within the Windows 10 environment. I doubt there are large differences between operating systems but its worth noting. So, lets say you are wanting to utilize FastSpeech2 using [ming024's implementation](https://github.com/ming024/FastSpeech2). To do so, you would need TextGrid files but lets say all you have is a collection of audio files of some person talking.
 
@@ -62,13 +60,13 @@ From what I could gather, SoX is the go-to for adjusting the audio so that MFA c
 It would appear that the best sampling rate is 16kHz and it should only contain 1 channel. To make this easy, I included the required code for this step within this repo. You will just need to figure out how to [install sox](http://sox.sourceforge.net/) so that the code works.
 
 ## Step 3: Generate LAB files via Prosodylab Aligner Tools
-For whatever reason, MFA looks for these so called lab files before creating the alignments. If you don't have them, it won't budge. What's funny, however, is the fact that these lab files are individual files that have the "audio file name" as the lab file name and the "words spoken in text" as the text in all caps within the file. A true head scratcher in terms of why is this a show stopper... but to get these lab files via Prosodylab Aligner Tools you will need to run the following in your command prompt:
+For whatever reason, MFA looks for these so called lab files before creating the alignments. To get these lab files, via Prosodylab Aligner Tools, you will need to run the following in your command prompt:
 
 ```
 git clone https://github.com/prosodylab/prosodylab.alignertools
 ```
 
-Then modify their code to be up-to-date. I've uploaded the modified relabel_clean.py file to save you some time but the modifications might effect your setup so first try to run their original code but if you get a bunch of lab files with the same "words spoken in text" then use mine. 
+Then, modify their code to be up-to-date. I've uploaded the modified relabel_clean.py file to save you some time but the modifications might effect your setup so first try to run their original code but if you get a bunch of lab files with the same "words spoken in text" then use mine. 
 
 You will most likely find it easy to interact with this file since they provide prompts to understand what you are wanting to do but for the sake of making a complete "how to" here are my inputs:
 <ol>
