@@ -66,9 +66,9 @@ For whatever reason, MFA looks for these so called lab files before creating the
 git clone https://github.com/prosodylab/prosodylab.alignertools
 ```
 
-Then, modify their code to be up-to-date. I've uploaded the modified relabel_clean.py file to save you some time but the modifications might effect your setup so first try to run their original code but if you get a bunch of lab files with the same "words spoken in text" then use mine. 
+Then, modify their code to be up-to-date. I've uploaded the modified relabel_clean.py file to save you some time but the modifications might effect your setup so first try to run their original code. If you get a bunch of lab files with the same "words spoken in text" then use mine. 
 
-You will most likely find it easy to interact with this file since they provide prompts to understand what you are wanting to do but for the sake of making a complete "how to" here are my inputs:
+You will most likely find it easy to interact with this file since they provide a prompt to understand what you are wanting to do but for the sake of making a complete "how to" here are my inputs:
 <ol>
 	<li>1</li>
 	<li>en (short for english)</li>
@@ -92,7 +92,7 @@ activate aligner
 mfa train C:/'path to wavs directory' C:/'path to librispeech-lexicon.txt' C:/'desired output path for TextGrid files'
 ```
 
-This process will take some time since its training the model and optimizing it's weights. The librispeech lexicon for english can be downloaded here: [LibriSpeech Lexicon](https://drive.google.com/open?id=1dAvxdsHWbtA1ZIh3Ex9DPn9Nemx9M1-L).
+This process will take some time since its training the model to be as accurate as possible. The librispeech lexicon for english can be downloaded here: [LibriSpeech Lexicon](https://drive.google.com/open?id=1dAvxdsHWbtA1ZIh3Ex9DPn9Nemx9M1-L).
 
 ## Step 5: Check Results
 The final step is to make sure you check the results. This was important for me since the first attempt produced so many strange errors but if the first couple of files look correct you're safe to assume the remainding files are also correct.
